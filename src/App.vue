@@ -1,18 +1,14 @@
 <template>
-  <div>
-    <InputDemo/>
-  </div>
+      <el-button>el-button</el-button>
 </template>
 
-<script lang="ts">
-import {defineComponent} from "vue";
-import InputDemo from './components/Input/demo.vue'
-export default defineComponent({
-  name: 'App',
+<script>
+
+export default {
+  name: 'app',
   components: {
-    InputDemo
   }
-});
+}
 </script>
 
 <style lang="scss">
