@@ -1,16 +1,14 @@
 <template>
   <div>
-    <Input/>
+    <el-input v-model="input" placeholder="Please input" />
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from "vue";
-import Input from "./index";
 export default defineComponent({
-  name: ' InputDemo',
+  name: ' Input',
   components: {
-    Input
   }
 });
 </script>
