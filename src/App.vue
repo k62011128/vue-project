@@ -2,7 +2,7 @@
   <div class="common-layout">
     <el-container style="height: 100%">
       <el-aside width="auto">
-        Aside
+        <Aside/>
       </el-aside>
       <el-container>
         <el-header>
@@ -23,10 +23,12 @@
 
 <script>
 import {defineComponent} from "vue";
-
+import Aside from "@/components/Aside";
 export default defineComponent({
   name: 'App',
-  components: {},
+  components: {
+    Aside
+  },
   setup(props, {emit}) {
   }
 });
