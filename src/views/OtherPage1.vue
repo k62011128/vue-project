@@ -1,6 +1,6 @@
 <template>
   <div>
-    Home
+    OtherPage1
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 import {defineComponent} from "vue";
 
 export default defineComponent({
-  name: ' Home',
+  name: ' OtherPage1',
   components: {},
   setup(props, {emit}) {
   }

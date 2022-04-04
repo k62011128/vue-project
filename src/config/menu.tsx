@@ -8,7 +8,7 @@ import {
 
 const menu: any = [
     {
-        path: '/',
+        path: '/home',
         name: 'home',
         label: '首页',
         icon: HomeFilled,
@@ -29,6 +29,7 @@ const menu: any = [
         url: ''
     },
     {
+        path: '/other',
         name: 'other',
         label: '其他',
         icon: Location,
