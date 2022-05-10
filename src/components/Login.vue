@@ -1,6 +1,7 @@
 <template>
   <div>
-    OtherPage1
+    <el-header>Header</el-header>
+    <el-main>Main</el-main>
   </div>
 </template>
 
@@ -8,7 +9,7 @@
 import {defineComponent} from "vue";
 
 export default defineComponent({
-  name: 'OtherPage1',
+  name: 'Login',
   components: {},
   setup(props, {emit}) {
   }

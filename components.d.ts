@@ -17,6 +17,10 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     Header: typeof import('./src/components/Header.vue')['default']
+    Input: typeof import('./src/components/todolist/Input.vue')['default']
+    List: typeof import('./src/components/todolist/List.vue')['default']
+    Login: typeof import('./src/components/Login.vue')['default']
+    Test: typeof import('./src/components/test.vue')['default']
     ToDoList: typeof import('./src/components/todolist/ToDoList.vue')['default']
   }
 }

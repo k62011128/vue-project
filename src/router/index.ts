@@ -2,6 +2,10 @@ import {createRouter, createWebHashHistory} from 'vue-router'
 
 const routes: any = [
     {
+        path: '/',
+        redirect: '/home'
+    },
+    {
         path: '/home',
         name: 'home',
         component: () => import('@/views/Home.vue')
@@ -14,6 +18,16 @@ const routes: any = [
         path: '/user',
         name: 'user',
         component: () => import('@/components/todolist/ToDoList.vue')
+    },
+    {
+        path: '/mall',
+        name: 'mall',
+        component: () => import('@/components/test.vue')
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: () => import('@/components/Login.vue')
     }
 ]
 const router = createRouter({

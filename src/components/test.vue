@@ -1,6 +1,6 @@
 <template>
   <div>
-    OtherPage1
+    {{title}}
   </div>
 </template>
 
@@ -8,9 +8,13 @@
 import {defineComponent} from "vue";
 
 export default defineComponent({
-  name: 'OtherPage1',
+  name: ' test',
   components: {},
+  props: {title: String},
   setup(props, {emit}) {
+  },
+  created(){
+
   }
 });
 </script>

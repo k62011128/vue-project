@@ -2,14 +2,14 @@
   <div>未完成的事件</div>
   <ul>
     <li v-for="(item,index) of arr1">
-        <input type="checkbox" :checked="false" @click="$emit('cs',item)">{{ item.name }}
+        <input type="checkbox" @click="$emit('cs',item)">{{ item.name }}
         <a @click="$emit('de',item)" >删除</a>
     </li>
   </ul>
   <div>已完成的事件</div>
   <ul>
     <li v-for="(item,index) of arr2">
-      <input type="checkbox" :checked="true" @click="$emit('cs',item)">{{ item.name }}
+      <input type="checkbox" @click="$emit('cs',item)">{{ item.name }}
       <a @click="$emit('de',item)">删除</a>
     </li>
   </ul>
@@ -26,7 +26,10 @@ export default defineComponent({
     arr: Array
   },
   data() {
-    return {}
+    return {
+      tr:true,
+      fal:false
+    }
   },
   computed: {
       arr1(){

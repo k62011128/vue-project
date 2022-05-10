@@ -13,5 +13,8 @@ module.exports = defineConfig({
                 resolvers: [ElementPlusResolver()],
             }),
         ]
+    },
+    devServer:{
+        proxy: 'http://localhost:5000'
     }
 })
