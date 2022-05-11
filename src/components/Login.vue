@@ -5,7 +5,7 @@
       <div class="name">Vue3练手项目</div>
     </div>
     <div class="login-body">
-      <el-form :model="ruleForm" :rules="rules" class="login-form">
+      <el-form :model="ruleForm" :rules="rules" class="login-form" ref="loginForm">
         <el-form-item label="账号" prop="username">
           <!--        prop对应rules的key,表示检测输入是否符合要求-->
           <el-input v-model.trim="ruleForm.username" autocomplete="off" type="text">
@@ -14,11 +14,10 @@
         </el-form-item>
         <el-form-item label="密码" prop="password">
           <el-input v-model.trim="ruleForm.password" autocomplete="off" type="password">
-
           </el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary">
+          <el-button type="primary" style="width: 100%;" @click="submitForm">
             登录
           </el-button>
         </el-form-item>
@@ -28,7 +27,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, reactive, toRefs} from "vue";
+import {localSet, reqLogin} from "@/api";
+import {defineComponent, reactive, ref, toRefs, VueElement} from "vue";
 
 export default defineComponent({
   name: 'Login',
@@ -51,8 +51,25 @@ export default defineComponent({
           }
         }
     )
+    const loginForm=ref(null)
+    const submitForm = async (formEl=undefined) => {
+      console.log(loginForm.value);
+      (loginForm.value! as VueElement & {validate: (valid: any) => boolean}).validate(async (valid: boolean) => {
+        if (valid) {
+          let res = await reqLogin(state.ruleForm.username, state.ruleForm.password)
+          const {token}:{token:string} = res as any
+          if(token==='admin'){
+            localSet('token',token)
+          }else {
+
+          }
+        }
+      });
+    }
     return {
-      ...toRefs(state)
+      ...toRefs(state),
+      submitForm,
+      loginForm
     }
   }
 });
