@@ -27,9 +27,10 @@
 </template>
 
 <script lang="ts">
-import {localSet, reqLogin} from "@/api";
+import {localGet, localSet, reqLogin} from "@/api";
 import {defineComponent, reactive, ref, toRefs, VueElement} from "vue";
-
+import {useRouter} from "vue-router";
+import { ElMessage } from 'element-plus'
 export default defineComponent({
   name: 'Login',
   components: {},
@@ -51,17 +52,21 @@ export default defineComponent({
           }
         }
     )
+    const router = useRouter();
+    if(localGet('token')) {
+      location.href='/'
+    }
     const loginForm=ref(null)
     const submitForm = async (formEl=undefined) => {
-      console.log(loginForm.value);
       (loginForm.value! as VueElement & {validate: (valid: any) => boolean}).validate(async (valid: boolean) => {
         if (valid) {
           let res = await reqLogin(state.ruleForm.username, state.ruleForm.password)
           const {token}:{token:string} = res as any
           if(token==='admin'){
             localSet('token',token)
+            location.href='/'
           }else {
-
+            ElMessage.error('login failed,please check your input!')
           }
         }
       });
@@ -73,6 +78,8 @@ export default defineComponent({
     }
   }
 });
+
+
 </script>
 
 <style lang="scss" scoped>

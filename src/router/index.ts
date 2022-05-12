@@ -17,7 +17,7 @@ const routes: any = [
     }, {
         path: '/user',
         name: 'user',
-        component: () => import('@/components/todolist/ToDoList.vue')
+        component: () => import('@/views/Home.vue')
     },
     {
         path: '/mall',

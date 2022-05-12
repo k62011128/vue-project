@@ -1,25 +1,25 @@
 <template>
-  <div class="common-layout" style="height: 100%">
-    <el-container style="height: 100%" v-if="state.loginState">
-      <el-aside width="auto">
-        <Aside/>
-      </el-aside>
-      <el-container>
-        <el-header>
-          <Header></Header>
-        </el-header>
-        <el-main>
-          <router-view></router-view>
-        </el-main>
-        <el-footer>
-          Footer
-        </el-footer>
+    <div class="common-layout" style="height: 100%">
+      <el-container style="height: 100%" v-if="state.loginState">
+        <el-aside width="auto">
+          <Aside/>
+        </el-aside>
+        <el-container>
+          <el-header>
+            <Header></Header>
+          </el-header>
+          <el-main>
+            <router-view></router-view>
+          </el-main>
+          <el-footer>
+            Footer
+          </el-footer>
+        </el-container>
       </el-container>
-    </el-container>
-    <el-container v-else>
-      <router-view></router-view>
-    </el-container>
-  </div>
+      <el-container v-else>
+        <router-view></router-view>
+      </el-container>
+    </div>
 </template>
 
 <script>
@@ -47,7 +47,7 @@ export default defineComponent({
       router.push({path: '/login'})
 
     onMounted(() => {
-      console.log('App')
+      // console.log('App is mounted')
     })
     return {
       state
