@@ -3,22 +3,28 @@
       class="el-menu-vertical-demo lef-nav"
       background-color="#545c64"
       text-color="#fff"
-      active-text-color="#ffd04b"
+      active-text-color="#fff"
+      router="true"
   >
     <h3>通用后台管理系统</h3>
-    <el-menu-item v-for="item in noChildren" :index="item.path" :key="item.path" @click="clickMenu(item)">
-      <el-icon><component :is="item.icon"></component></el-icon>
-      <template #title>{{item.label}}</template>
+    <el-menu-item v-for="item in noChildren" :route="item.path">
+      <el-icon>
+        <component :is="item.icon"></component>
+      </el-icon>
+      <span>{{ item.label }}</span>
     </el-menu-item>
-
     <el-sub-menu v-for="item in hasChildren">
       <template #title>
-        <el-icon><component :is="item.icon"></component></el-icon>
-        <span>{{item.label}}</span>
+        <el-icon>
+          <component :is="item.icon"></component>
+        </el-icon>
+        <span>{{ item.label }}</span>
       </template>
-      <el-menu-item v-for="(subItem,subIndex) in item.children" :index="subItem.path" :key="subItem.path" @click="clickMenu(subItem)">
-        <el-icon><component :is="subItem.icon"></component></el-icon>
-        <template #title>{{subItem.label}}</template>
+      <el-menu-item v-for="item2 in item.children" :route="item.path">
+        <el-icon>
+          <component :is="item2.icon"></component>
+        </el-icon>
+        <span>{{ item2.label }}</span>
       </el-menu-item>
     </el-sub-menu>
 
@@ -26,32 +32,23 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import {computed, defineComponent} from "vue";
 import menu from "@/config/menu";
+
 export default defineComponent({
   name: ' Aside',
-  data(){
-    return {
-      menu
-    }
-  },
-  components: {
-  },
+  components: {},
   setup(props, {emit}) {
-  },
-  computed:{
-     noChildren():any{
-       return this.menu.filter((item:any)=>!item.children)
-     },
-    hasChildren():any{
-      return this.menu.filter((item:any)=>item.children)
-    }
-  },
-  methods:{
-    clickMenu(item:any):any{
-      this.$router.push({
-       name:item.name
-     })
+    const noChildren = computed(() => {
+      return menu.filter((item: any) => !item.children)
+    })
+    const hasChildren = computed(() => {
+      return menu.filter((item: any) => item.children)
+    })
+    return {
+      menu,
+      noChildren,
+      hasChildren
     }
   }
 });
@@ -62,14 +59,20 @@ export default defineComponent({
   width: 200px;
   min-height: 400px;
 }
-.lef-nav{
+
+.lef-nav {
   height: 100%;
   border: none;
-  h3{
+
+  h3 {
+    :hover{
+      color: black;
+    }
     color: aqua;
     text-align: center;
-    padding-top: 10px;
-    line-height: 30px;
+    padding-top: 0.7rem;
+    padding-bottom: 0.3rem;
+    line-height: 1.5rem;
   }
 }
 
