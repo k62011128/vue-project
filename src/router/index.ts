@@ -13,7 +13,7 @@ const routes: any = [
     {
         path: '/page1',
         name: 'page1',
-        component: () => import('@/views/OtherPage1.vue')
+        component: () => import('@/components/todolist/ToDoList.vue')
     }, {
         path: '/user',
         name: 'user',

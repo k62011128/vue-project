@@ -20,7 +20,7 @@
         </el-icon>
         <span>{{ item.label }}</span>
       </template>
-      <el-menu-item v-for="item2 in item.children" :route="item.path">
+      <el-menu-item v-for="item2 in item.children" :route="item2.path">
         <el-icon>
           <component :is="item2.icon"></component>
         </el-icon>
@@ -65,7 +65,7 @@ export default defineComponent({
   border: none;
 
   h3 {
-    :hover{
+    &:hover{
       color: black;
     }
     color: aqua;
@@ -74,6 +74,7 @@ export default defineComponent({
     padding-bottom: 0.3rem;
     line-height: 1.5rem;
   }
+
 }
 
 </style>
