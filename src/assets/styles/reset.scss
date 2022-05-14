@@ -15,3 +15,11 @@ body {
   font-size: $primary-font-size;
   color: $primary-color;
 }
+
+a {
+  text-decoration: none;
+  color:cornflowerblue;
+  :visited{
+    color:cornflowerblue;
+  }
+}

@@ -1,12 +1,12 @@
 <template>
     <div class="common-layout" style="height: 100%">
-      <el-container style="height: 100%" v-if="state.loginState">
+      <el-container style="height: 100%" v-if="loginState">
         <el-aside width="auto">
           <Aside/>
         </el-aside>
         <el-container>
-          <el-header>
-            <Header></Header>
+          <el-header height="70px">
+            <Header :username="username" @changeLoginState="changeLoginState"></Header>
           </el-header>
           <el-main>
             <router-view></router-view>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import {computed, defineComponent, onMounted, reactive} from "vue";
+import {computed, defineComponent, onMounted, reactive, toRefs} from "vue";
 import Aside from "@/components/Aside";
 import Header from "@/components/Header";
 import {useRouter} from "vue-router";
@@ -38,19 +38,27 @@ export default defineComponent({
   setup(props, {emit}) {
     const router = useRouter();
     const state = reactive({
-      loginState: false
+      loginState: false,
+      username:null
     })
 
-    if (localGet('token'))
+    if (localGet('token')!=='null')
+    {
       state.loginState = true
+      state.username=localGet('username')
+    }
     else
       router.push({path: '/login'})
 
+    const changeLoginState=()=>{
+      state.loginState=!state.loginState
+    }
     onMounted(() => {
       // console.log('App is mounted')
     })
     return {
-      state
+      ...toRefs(state),
+      changeLoginState
     }
   }
 });

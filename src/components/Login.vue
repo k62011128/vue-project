@@ -53,7 +53,7 @@ export default defineComponent({
         }
     )
     const router = useRouter();
-    if(localGet('token')) {
+    if(localGet('token')!=='null') {
       location.href='/'
     }
     const loginForm=ref(null)
@@ -64,6 +64,7 @@ export default defineComponent({
           const {token}:{token:string} = res as any
           if(token==='admin'){
             localSet('token',token)
+            localSet('username',state.ruleForm.username)
             location.href='/'
           }else {
             ElMessage.error('login failed,please check your input!')
