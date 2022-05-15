@@ -16,7 +16,7 @@
           </el-footer>
         </el-container>
       </el-container>
-      <el-container v-else>
+      <el-container v-else style="height: 100%;width: 100%">
         <router-view></router-view>
       </el-container>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="left">
-      1
+      {{title}}
     </div>
     <div class="right">
       <el-popover
@@ -29,6 +29,7 @@
 import {defineComponent, onMounted, reactive, toRefs} from "vue";
 import {localSet} from "@/api";
 import {useRouter} from "vue-router";
+import {pathMap} from "@/utils";
 
 export default defineComponent({
   name: 'Header',
@@ -39,7 +40,8 @@ export default defineComponent({
   setup(props, {emit}) {
     const state = reactive({
       circleUrl: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
-      username: props.username!.slice(1, props.username!.length - 1)
+      username: props.username!.slice(1, props.username!.length - 1),
+      title:null
     })
     const router = useRouter();
     const logOut=()=>{
@@ -48,6 +50,10 @@ export default defineComponent({
       emit('changeLoginState')
       router.push({path: '/login'})
     }
+    router.afterEach((to:any, from, failure)=>{
+      state.title=pathMap[to.name]
+      document.title=state.title!
+    })
     return {
       ...toRefs(state),
       logOut

@@ -6,7 +6,7 @@
       active-text-color="#fff"
       router="true"
   >
-    <h3>通用后台管理系统</h3>
+    <h4>通用后台管理系统</h4>
     <el-menu-item v-for="item in noChildren" :route="item.path">
       <el-icon>
         <component :is="item.icon"></component>
@@ -64,14 +64,14 @@ export default defineComponent({
   height: 100%;
   border: none;
 
-  h3 {
+  h4 {
     &:hover{
-      color: black;
+      color: #fa9ee5;
     }
-    color: aqua;
+    color: #ffffff;
     text-align: center;
-    padding-top: 0.7rem;
-    padding-bottom: 0.3rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
     line-height: 1.5rem;
   }
 
