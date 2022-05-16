@@ -20,9 +20,9 @@ const routes: any = [
         component: () => import('@/views/Home.vue')
     },
     {
-        path: '/mall',
-        name: 'mall',
-        component: () => import('@/components/test.vue')
+        path: '/introduce',
+        name: 'introduce',
+        component: () => import('@/views/Introduce.vue')
     },
     {
         path: '/login',

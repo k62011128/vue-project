@@ -15,8 +15,8 @@ const menu: any = [
         url: ''
     },
     {
-        path: '/mall',
-        name: 'mall',
+        path: '/introduce',
+        name: 'introduce',
         label: '商品管理',
         icon: VideoPlay,
         url: ''

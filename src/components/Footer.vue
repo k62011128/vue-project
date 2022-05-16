@@ -1,16 +1,20 @@
 <template>
   <div>
-    OtherPage1
+    看都看了，不点个star吗？
   </div>
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
+import {defineComponent, reactive, toRefs} from "vue";
 
 export default defineComponent({
-  name: 'OtherPage1',
+  name: 'Footer',
   components: {},
   setup(props, {emit}) {
+    const state = reactive({})
+    return {
+      ...toRefs(state)
+    }
   }
 });
 </script>

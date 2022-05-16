@@ -12,7 +12,7 @@
             <router-view></router-view>
           </el-main>
           <el-footer>
-            Footer
+            <Footer></Footer>
           </el-footer>
         </el-container>
       </el-container>
@@ -28,12 +28,14 @@ import Aside from "@/components/Aside";
 import Header from "@/components/Header";
 import {useRouter} from "vue-router";
 import {localGet} from "@/api";
+import Footer from "@/components/Footer";
 
 export default defineComponent({
   name: 'App',
   components: {
     Aside,
-    Header
+    Header,
+    Footer
   },
   setup(props, {emit}) {
     const router = useRouter();
