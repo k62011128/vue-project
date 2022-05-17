@@ -15,9 +15,9 @@ const routes: any = [
         name: 'page1',
         component: () => import('@/components/todolist/ToDoList.vue')
     }, {
-        path: '/user',
-        name: 'user',
-        component: () => import('@/views/Home.vue')
+        path: '/addProduct',
+        name: 'addProduct',
+        component: () => import('@/views/AddProduct.vue')
     },
     {
         path: '/introduce',

@@ -3,7 +3,9 @@ import {
     VideoPlay,
     User,
     Location,
-    Setting
+    Setting,
+    Plus,
+    DataLine
 } from '@element-plus/icons-vue'
 
 const menu: any = [
@@ -18,14 +20,14 @@ const menu: any = [
         path: '/introduce',
         name: 'introduce',
         label: '商品管理',
-        icon: VideoPlay,
+        icon: DataLine,
         url: ''
     },
     {
-        path: '/user',
-        name: 'user',
-        label: '用户管理',
-        icon: User,
+        path: '/addProduct',
+        name: 'addProduct',
+        label: '添加商品',
+        icon: Plus,
         url: ''
     },
     {

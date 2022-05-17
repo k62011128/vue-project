@@ -5,6 +5,7 @@ declare global {
   const ElAvatar: typeof import('element-plus/es')['ElAvatar']
   const ElButton: typeof import('element-plus/es')['ElButton']
   const ElCard: typeof import('element-plus/es')['ElCard']
+  const ElCascader: typeof import('element-plus/es')['ElCascader']
   const ElContainer: typeof import('element-plus/es')['ElContainer']
   const ElFooter: typeof import('element-plus/es')['ElFooter']
   const ElForm: typeof import('element-plus/es')['ElForm']
@@ -16,6 +17,9 @@ declare global {
   const ElMenu: typeof import('element-plus/es')['ElMenu']
   const ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
   const ElPopover: typeof import('element-plus/es')['ElPopover']
+  const ElRadio: typeof import('element-plus/es')['ElRadio']
+  const ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
   const ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+  const ElUpload: typeof import('element-plus/es')['ElUpload']
 }
 export {}

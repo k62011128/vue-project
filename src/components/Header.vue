@@ -69,7 +69,7 @@ export default defineComponent({
   justify-content: flex-start;
 
   .left {
-    width: 3rem;
+    width: 5rem;
   }
 
   .right {
