@@ -25,6 +25,8 @@ declare module 'vue' {
     ElRadio: typeof import('element-plus/es')['ElRadio']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTable: typeof import('element-plus/es')['ElTable']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElUpload: typeof import('element-plus/es')['ElUpload']
     Footer: typeof import('./src/components/Footer.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
@@ -33,6 +35,7 @@ declare module 'vue' {
     Login: typeof import('./src/components/Login.vue')['default']
     Test: typeof import('./src/components/test.vue')['default']
     ToDoList: typeof import('./src/components/todolist/ToDoList.vue')['default']
+    WangEditor: typeof import('./src/components/WangEditor.vue')['default']
   }
 }
 

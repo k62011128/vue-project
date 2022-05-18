@@ -28,7 +28,12 @@ const routes: any = [
         path: '/login',
         name: 'login',
         component: () => import('@/components/Login.vue')
-    }
+    },
+    {
+        path: '/clients',
+        name: 'clients',
+        component: () => import('@/views/Client.vue')
+    },
 ]
 const router = createRouter({
     history: createWebHashHistory(),

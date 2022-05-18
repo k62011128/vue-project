@@ -52,5 +52,12 @@ const menu: any = [
             }
         ]
     },
+    {
+        path: '/clients',
+        name: 'clients',
+        label: '用户管理',
+        icon: Setting,
+        url: ''
+    },
 ]
 export default menu
