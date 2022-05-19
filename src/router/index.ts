@@ -34,6 +34,11 @@ const routes: any = [
         name: 'clients',
         component: () => import('@/views/Client.vue')
     },
+    {
+        path: '/goods',
+        name: 'goods',
+        component: () => import('@/views/GoodsPictures.vue')
+    }
 ]
 const router = createRouter({
     history: createWebHashHistory(),

@@ -1,11 +1,11 @@
 import {
     HomeFilled,
-    VideoPlay,
-    User,
     Location,
     Setting,
     Plus,
-    DataLine
+    DataLine,
+    GoodsFilled,
+    UserFilled
 } from '@element-plus/icons-vue'
 
 const menu: any = [
@@ -56,7 +56,14 @@ const menu: any = [
         path: '/clients',
         name: 'clients',
         label: '用户管理',
-        icon: Setting,
+        icon: UserFilled,
+        url: ''
+    },
+    {
+        path: '/goods',
+        name: 'goods',
+        label: '商品图片',
+        icon: GoodsFilled,
         url: ''
     },
 ]
