@@ -5,9 +5,9 @@ import {
     Plus,
     DataLine,
     GoodsFilled,
-    UserFilled
+    UserFilled,
+    Collection
 } from '@element-plus/icons-vue'
-
 const menu: any = [
     {
         path: '/home',
@@ -64,6 +64,13 @@ const menu: any = [
         name: 'goods',
         label: '商品图片',
         icon: GoodsFilled,
+        url: ''
+    },
+    {
+        path: '/carousel',
+        name: 'carousel',
+        label: '轮播图',
+        icon: Collection,
         url: ''
     },
 ]

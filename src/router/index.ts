@@ -38,6 +38,11 @@ const routes: any = [
         path: '/goods',
         name: 'goods',
         component: () => import('@/views/GoodsPictures.vue')
+    },
+    {
+        path: '/carousel',
+        name: 'carousel',
+        component: () => import('@/views/Carousel.vue')
     }
 ]
 const router = createRouter({
