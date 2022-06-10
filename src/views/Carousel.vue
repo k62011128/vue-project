@@ -6,9 +6,18 @@
         <img :src="picArr[0]">
       </div>
     </div>
-    <!--    <ul id="dot" style="list-style: none">-->
-    <!--      <li v-for="pic in picArr" ></li>-->
-    <!--    </ul>-->
+    <div id="wrapArrow">
+      <div id="arrowBox">
+        <div id="left"></div>
+        <div id="right"></div>
+      </div>
+    </div>
+    <div id="wrapDot">
+      <div id="dot">
+        <div v-for="pic in picArr"></div>
+      </div>
+    </div>
+
   </div>
 
 </template>
@@ -40,16 +49,16 @@ export default defineComponent({
     function nxt() {
       state.transX++
       state.tsion = true
-      if (state.transX > state.picArr.length ) {
-          state.tsion = false
-          state.transX = 0
+      if (state.transX > state.picArr.length) {
+        state.tsion = false
+        state.transX = 0
       }
     }
 
     onMounted(() => {
-        setInterval(()=>{
-          nxt()
-        },3000)
+      setInterval(() => {
+        nxt()
+      }, 3000)
     })
     return {
       ...toRefs(state),
@@ -74,6 +83,7 @@ export default defineComponent({
     padding: 0;
     width: 700px;
     height: 400px;
+    top: 0;
 
     #imgBox {
       display: flex;
@@ -87,12 +97,66 @@ export default defineComponent({
 
   }
 
-  #dot {
+  #wrapArrow {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    li {
+    #arrowBox {
+      display: flex;
+      width: 700px;
+      height: 400px;
+      align-items: center;
 
+      #left {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        opacity: 0.5;
+      }
+
+      #right {
+        margin-left: auto;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        opacity: 0.5;
+      }
     }
   }
+
+  #wrapDot {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+
+    #dot {
+      display: flex;
+      width:200px;
+      height: 40px;
+      justify-content: space-around;
+      align-items: center;
+      margin:0 auto;
+
+      div {
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        background-color: rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+  }
+
+
 }
 
 </style>
